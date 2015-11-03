@@ -103,10 +103,6 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Trinet.Core.IO.Ntfs, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Imports\Trinet.Core.IO.Ntfs\Bin\Trinet.Core.IO.Ntfs.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Com\GetRunningObjectCommand.cs" />
@@ -315,6 +311,14 @@
     <ProjectReference Include="..\Pscx.Core\Pscx.Core.csproj">
       <Project>{2527CA26-82B6-4E2C-8199-25E5986A8AA2}</Project>
       <Name>Pscx.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Imports\Trinet.Core.IO.Ntfs\Source\Trinet.Core.IO.Ntfs.csproj">
+      <Project>{520A3DF2-071D-47AE-9B25-2A286306DDF5}</Project>
+      <Name>Trinet.Core.IO.Ntfs</Name>
+      <BuildReference>true</BuildReference>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <SetPlatform Condition="'$(Configuration)' == 'Debug'">Configuration=Debug</SetPlatform>
+      <SetPlatform Condition="'$(Configuration)' != 'Debug'">Configuration=Release</SetPlatform>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
